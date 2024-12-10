@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  ffmpeg:
+    build: .
+    container_name: "ffmpeg"
+    restart: "always"
+    volumes:
+      - ./output:/app/output
+    ports:
+      - "5000:5000"
+    networks:
+        - my-network
+
+networks:
+  my-network:
+    driver: bridge                
